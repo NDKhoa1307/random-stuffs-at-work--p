@@ -1,0 +1,25 @@
+# Dotfiles repo rooted at $HOME: deny everything by default, then allow-list
+# the specific config files/dirs that are safe and useful to replay on a new
+# machine. Secrets, caches, and machine-local state stay untracked.
+/*
+!/.gitignore
+!/README.md
+
+# Shell
+!/.bashrc
+!/.bash_profile
+!/.bash_logout
+!/.bash-powerline.sh
+
+# Git
+!/.gitconfig
+
+# tmux (plugins under .tmux/ and .config/tmux/ are git clones managed by
+# TPM - reinstalled on a new machine, not tracked here)
+!/.tmux.conf
+
+# App configs
+!/.config
+/.config/*
+!/.config/nvim
+!/.config/ruff
