@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -63,6 +61,18 @@ return {
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
+        -- Map H to navigate to the previous buffer
+        H = {
+          function() require("astrocore.buffer").nav(-vim.v.count1) end,
+          desc = "Previous buffer",
+        },
+        
+        -- Map L to navigate to the next buffer
+        L = {
+          function() require("astrocore.buffer").nav(vim.v.count1) end,
+          desc = "Next buffer",
+        },
+
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
           function()
@@ -84,8 +94,14 @@ return {
         -- ["<C-S>"] = false,
       },
       i = {
+        -- Copilot keybindings
+        ["<C-'>"] = { 'copilot#Accept("\\<CR>")', expr = true, replace_keycodes = false, desc = "Copilot accept everything" },
+        ["<C-l>"] = { 'copilot#AcceptWord()', expr = true, replace_keycodes = false, desc = "Copilot accept next word" },
+        ["<C-;>"] = { 'copilot#AcceptLine()', expr = true, replace_keycodes = false, desc = "Copilot accept 1 line" },
+
+        -- Disable alt + z (for unikey)
         ["<A-z>"] = false,
-      }
+      },
     },
   },
 }

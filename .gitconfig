@@ -1,3 +1,5 @@
 [user]
 	name = khoa_nguyendang@datahouse.com
 	email = khoa_nguyendang@datahouse.com
+[init]
+	defaultBranch = master

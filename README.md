@@ -31,7 +31,8 @@ denied by `.gitignore` and never gets added by accident.
 ```sh
 # 1. Clone this repo directly over $HOME (on the new machine, as $HOME):
 git clone <remote-url> ~ 2>/dev/null || \
-  (git init && git remote add origin <remote-url> && git fetch && git checkout -f main)
+  (git init && git remote add origin <remote-url> && git fetch origin master && git checkout -f master)
+
 
 # 2. Neovim: install the binary (nvim >= 0.10), then just launch it —
 #    lazy.nvim will bootstrap itself and install all plugins from lazy-lock.json.
