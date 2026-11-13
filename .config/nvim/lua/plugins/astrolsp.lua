@@ -6,32 +6,6 @@ return {
   opts = {
     -- Configuration table for individual language servers
     config = {
-      pylsp = {
-        settings = {
-          pylsp = {
-            plugins = {
-              -- Disable import formatting / sorting in pylsp
-              isort = { enabled = false },
-              rope_autoimport = { enabled = false },
-              rope_completion = { enabled = false },
-              -- Tell pycodestyle / autopep8 to ignore E501 and E402 (prevents autopep8 from moving imports)
-              pycodestyle = {
-                ignore = { "E501", "E402" },
-                maxLineLength = 88,
-              },
-              autopep8 = {
-                ignore = { "E501", "E402" },
-                maxLineLength = 88,
-              },
-              -- If you have flake8 enabled, do the same here
-              flake8 = {
-                ignore = { "E501", "E402" },
-                maxLineLength = 88,
-              },
-            },
-          },
-        },
-      },
       ruff = {
         init_options = {
           settings = {

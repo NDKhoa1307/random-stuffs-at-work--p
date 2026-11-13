@@ -10,11 +10,19 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vi='nvim'
 alias lg='lazygit'
+alias kiro='kiro-cli'
+
 PS1='[\u@\h \W]\$ '
 
 # Export path for packages
 export PATH="/home/khoand1307/.local/bin:$PATH" # .local/bin
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"  # Nvim
+
+# DHA VizERP setups
+export AWS_PROFILE=directviz
+
+# Coding preferences
+export PYTHONDONTWRITEBYTECODE=1 
 
 # Powerline
 source ~/.bash-powerline.sh
